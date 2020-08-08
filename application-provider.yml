@@ -1,0 +1,52 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8001
+spring:
+  profiles: dev #开发环境
+  application:
+    name: SMBMSPROVIDER  #对曝光的微服务的名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud3
+    username: root
+    password: root
+# SpingBoot整合Mybatis
+mybatis:
+  mapper-locations: classpath:mapping/**/*Mapper.xml
+  type-aliases-package: com.smbms.pojo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: springcloud-provide8001XXXX_hystrix  #自定义服务名称信息,表示是一个熔断器的微服务
+    prefer-ip-address: true   #访问路径显示IP地址
+
+---
+server:
+  port: 8002
+spring:
+  profiles: test #测试环境
+  application:
+    name: SMBMSPROVIDER  #对曝光的微服务的名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud3
+    username: root
+    password: root
+# SpingBoot整合Mybatis
+mybatis:
+  mapper-locations: classpath:mapping/**/*Mapper.xml
+  type-aliases-package: com.smbms.pojo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: springcloud-provide8001XXXX_hystrix  #自定义服务名称信息,表示是一个熔断器的微服务
+    prefer-ip-address: true   #访问路径显示IP地址
