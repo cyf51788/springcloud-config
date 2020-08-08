@@ -11,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springcloud3
+    url: jdbc:mysql://127.0.0.1:3306/springcloud1
     username: root
     password: root
 # SpingBoot整合Mybatis
@@ -36,7 +36,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springcloud3
+    url: jdbc:mysql://127.0.0.1:3306/springcloud2
     username: root
     password: root
 # SpingBoot整合Mybatis
